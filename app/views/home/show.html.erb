@@ -1,0 +1,22 @@
+<H2> on <%= @tweets[0].user.name %>'s Twitter... </H2>
+<div id="myAJAX">
+
+</div>
+<div class="banner">
+<img src="<%= @tweets[0].user.profile_banner_url %>">
+
+</div>
+
+<% @tweets.each do |t| %>
+<div class="outer">
+<div class="inner user_pic">
+  <img src="<%=t.user.attrs[:profile_image_url]%>">
+</div>
+<div class="inner">
+  <p class="name"><%= t.user.name %> <span>@<%= t.user.screen_name %></span></p>
+  <p class="text"><%= subsub t.text %></p>
+</div>
+</div>
+
+  <br>
+<% end %>

@@ -1,0 +1,9 @@
+<h1> Twitter </h1>
+
+<h3> list of people </h3>
+
+<ul>
+<% @list.each do |h| %>
+  <li><%= link_to "#{h.map {|k,v| k }[0]}", twitter_path(h.map {|k,v| v }[0])%></li>
+<% end %>
+</ul>
